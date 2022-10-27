@@ -7,6 +7,7 @@ Home = Blueprint("Home",__name__)
 @Home.route("/")
 def getHome():
     g.equipos = equipos
+    
     return render_template("home/home.html")
 
 

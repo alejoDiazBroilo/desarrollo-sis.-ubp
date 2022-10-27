@@ -40,3 +40,23 @@ for i in partidos:
     equipos[equipos_nombre.index(i['partido_eq1'])].cambiar_puntajes(puntos1,int(i['partido_resultado_eq1']),int(i['partido_resultado_eq2']))
     equipos[equipos_nombre.index(i['partido_eq2'])].cambiar_puntajes(puntos2,int(i['partido_resultado_eq2']),int(i['partido_resultado_eq1']))
     
+
+
+for i in range(len(equipos)-1):
+    for j in range(0, len(equipos)-i-1):
+        if equipos[j].puntos > equipos[j + 1].puntos:
+            swapped = True
+            equipos[j], equipos[j + 1] = equipos[j + 1], equipos[j]
+
+    if not swapped:
+        pass
+
+
+
+
+
+
+
+
+
+

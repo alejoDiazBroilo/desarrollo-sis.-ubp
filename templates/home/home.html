@@ -13,7 +13,7 @@
             <h1 class="title">PAISES</h1>
 
             <table class="tftable" border="1">
-            <tr><th>EQUIPOS</th></tr>
+            <tr><th>EQUIPOS: {{g.equipos[-1].id}}</th></tr>
             {% for i in g.equipos %}
                 <tr><td> {{i.nombre}}</td></tr>
             {% endfor %}
@@ -28,6 +28,7 @@
                 <th>Goles a favor</th><th>Gol en contra</th></tr>
             
             {% for i in g.equipos %}
+            
                 <tr><td>{{ i.id }}</td><td>{{i.nombre}}</td><td> {{i.puntos}} </td><td>{{i.goles_favor - i.goles_contra}}</td><td>{{ i.goles_favor }}</td><td>{{ i.goles_contra}}</td></tr>        
             {% endfor %}
             
