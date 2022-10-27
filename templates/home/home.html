@@ -1,18 +1,39 @@
-{% extends "base.html" %}
-{% block title %}
-    Home
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=|, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/home_css.css') }}">
+</head>
+<body>
+    <div class="ahhh">
+        <div class="containerButtons">
+            <h1 class="title">PAISES</h1>
 
+            <table class="tftable" border="1">
+            <tr><th>EQUIPOS</th></tr>
+            {% for i in g.equipos %}
+                <tr><td> {{i.nombre}}</td></tr>
+            {% endfor %}
+            
+            </table> 
+        </div >
+        <div class="containerData">
+            <h1 class="title">Mundial Qatar 2022</h1>
 
+            <table class="tftable" border="1">
+            <tr><th>Posicion</th><th>Equipo</th><th>Puntos</th><th>Diferencia</th>
+                <th>Goles a favor</th><th>Gol en contra</th></tr>
+            
+            {% for i in g.equipos %}
+                <tr><td>{{ i.id }}</td><td>{{i.nombre}}</td><td> {{i.puntos}} </td><td>{{i.goles_favor - i.goles_contra}}</td><td>{{ i.goles_favor }}</td><td>{{ i.goles_contra}}</td></tr>        
+            {% endfor %}
+            
+            </table> 
+        </div>
+    </div>
 
-{% block content %}
-    <h1>Estas en Home!!!</h1>
-    <p>
-        {% for i in g.partidos %}
-            {{ i }}
-            <br>
-        {% endfor %}
-    </p>
-{% endblock %}
-
-
+</body>
+</html>

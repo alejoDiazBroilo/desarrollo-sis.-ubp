@@ -6,8 +6,7 @@ Home = Blueprint("Home",__name__)
 
 @Home.route("/")
 def getHome():
-    g.partidos = partidos
-    g.len_partidos = len(partidos)
+    g.equipos = equipos
     return render_template("home/home.html")
 
 
