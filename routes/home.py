@@ -1,5 +1,5 @@
 from flask import Blueprint,render_template,redirect,url_for,g
-from models.databases import partidos
+from models.databases import partidos,equipos,equipos_nombre
 
 
 Home = Blueprint("Home",__name__)
